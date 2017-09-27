@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<style>
+
+.flexcontainer{
+
+display: flex;
+flex-wrap: wrap;
+}
+
+.flexitem{
+
+flex-grow: 1;
+
+}
+
+template{
+
+display: none;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<template id="repo">
+<div>
+  <div><a href="{{url}}">{{name}}</a></div>
+</div>
+</template>
+
+<template id="searchItem">
+<div>
+  <div><b>{{term}}</b> ({{time}})</div>
+</div>
+</template>
+
+  <div class="flexcontainer">
+    <div class="flexitem" style="flex-basis: 100%;">
+    <input type="text" id="searchBox" />
+    <button onclick="submitSearch('searchBox');">Find User</button>
+
+    </div>
+    <div class="flexitem" style="flex-basis: 30%;">
+
+<h2>Previous Searches</h2>
+
+<div id="searchList">
+
+</div>
+
+    </div>
+
+
+    <div class="flexitem" style="flex-basis: 70%;">
+
+<h2>Repos</h2>
+<div id="repoList">
+
+</div>
+    </div>
+  </div>
+  <script src="./js/handlebars-v4.0.10.js"></script>
+  <script src="./js/jquery-3.2.1.js"></script>
+  <script src="./js/app.js"></script>
+
+</body>
+
+</html>
